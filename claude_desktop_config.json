@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "outrun": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "outrun-mcp"
+      ],
+      "env": {
+			"OUTRUN_API_KEY": "YOUR_API_KEY_HERE",
+			"OUTRUN_API_URL": "https://0ut.run"
+      }
+    }
+  }
+}

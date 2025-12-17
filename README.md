@@ -17,12 +17,24 @@ It connects AI assistants (like Claude Desktop) directly to high-resolution cryp
 
 ## Installation
 
-### Smithery.ai (Recommended)
+Add the following configuration to your `claude_desktop_config.json` file:
 
-To install **Outrun Crypto** for Claude Desktop automatically via [Smithery](https://smithery.ai/server/outrun-mcp):
-
-```bash
-npx -y @smithery/cli install outrun-mcp --client claude
+```json
+{
+  "mcpServers": {
+    "outrun": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "outrun-mcp"
+      ],
+      "env": {
+        "OUTRUN_API_KEY": "YOUR_API_KEY_HERE",
+        "OUTRUN_API_URL": "https://0ut.run"
+      }
+    }
+  }
+}
 ```
 
 ## Configuration
@@ -33,8 +45,6 @@ This server requires an API Key.
 1.  **Generate Invoice:** `POST /key/buy` (Body: `{ "amount": 1000 }`)
 2.  **Pay Invoice:** Use a Lightning wallet to pay.
 3.  **Claim Key:** `GET /key/claim/:orderId` -> Returns `{ "apiKey": "..." }`
-
-When installing via Smithery, you will be prompted to enter your `OUTRUN_API_KEY`.
 
 ## Tools & Examples
 

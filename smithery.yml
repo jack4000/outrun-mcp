@@ -1,0 +1,17 @@
+# smithery.yml
+name: outrun
+description: "Crypto consensus engine and volatility monitor powered by 0ut.run"
+
+startCommand:
+  type: stdio
+  config:
+    command: "npx"
+    args: ["-y", "outrun-mcp"]
+
+configSchema:
+  type: object
+  required: ['OUTRUN_API_KEY']
+  properties:
+    OUTRUN_API_KEY:
+      type: string
+      description: "Your API Key from https://0ut.run"
